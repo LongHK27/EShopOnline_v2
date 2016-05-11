@@ -1,0 +1,28 @@
+﻿@model EShopOnline_v2.DAL.TaiKhoan
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="stylesheet" href="~/Contents/css/login.css" type="text/css">
+</head>
+<body>
+    <div class="body"></div>
+    <div class="grad"></div>
+    <div class="login">
+        <h1>Please Login to continue!</h1>
+        @Html.ValidationSummary(true, null, new { @class = "alert alert-danger", @style = "font-size:1.3em; color:rgba(256,50,50,0.9);" })
+        @using (Html.BeginForm())
+        {
+            @Html.TextBoxFor(model => model.Ten, new { @placeholder = "Username", @type = "text" })
+            @Html.TextBoxFor(model => model.MatKhau, new { @placeholder = "Password", @type = "password" })
+            <input type="submit" value="Login">
+        }
+        <a href="@Url.Action("Index","Home")" style = "color: black; position: absolute; bottom: 10px;"> « Back to homepage</a>
+    </div>
+</body>
+</html>

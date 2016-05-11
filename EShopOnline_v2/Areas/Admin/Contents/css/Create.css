@@ -1,0 +1,37 @@
+﻿.form-horizontal {
+    margin: 0;
+    padding: 0;
+    width: 90%;
+}
+h4 {
+    color: black;
+    display: block;
+    font-weight: bold;
+}
+#bool {
+    width: 20%;
+}
+#num, #years{
+    width: 30%;
+}
+.form-horizontal .form-control {
+    border: 1px solid #0064c8;
+    width: 60%;
+}
+
+textarea {
+    border: 1px solid #0064c8;
+    -moz-min-width: 60%;
+    -ms-min-width: 60%;
+    -o-min-width: 60%;
+    -webkit-min-width: 60%;
+    min-width: 60%;
+    min-height: 10em;
+}
+.select {
+    border: 1px solid #0064c8;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    width: 60%;
+    height: 2.9em;
+}

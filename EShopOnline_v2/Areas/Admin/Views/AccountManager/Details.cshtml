@@ -1,0 +1,57 @@
+﻿@model EShopOnline_v2.DAL.TaiKhoan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+    <link rel="stylesheet" type="text/css" href="/Areas/Admin/Contents/css/Detail.css" />
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tài khoản</h4>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Tên tài khoản:</dt>
+        <dd> @Html.DisplayFor(model => model.Ten) </dd>
+
+        <dt>Họ tên:</dt>
+        <dd> @Html.DisplayFor(model => model.HoTen) </dd>
+
+        <dt>Loại:</dt>
+        @{
+            var type = @Model.Loai == true ? "Admin" : "Khách hàng";
+        }
+        <dd>@type</dd>
+
+        <dt>Email:</dt>
+        <dd> @Html.DisplayFor(model => model.Email)</dd>
+
+        <dt>Địa chỉ: </dt>
+        <dd> @Html.DisplayFor(model => model.DiaChi) </dd>
+
+        <dt>Số điện thoại: </dt>
+        <dd> @Html.DisplayFor(model => model.SDT) </dd>
+
+        <dt>Ngày lập: </dt>
+        <dd> @Html.DisplayFor(model => model.NgayLap) </dd>
+        <dt></dt>
+        <dd>
+
+            <p class="feedback">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </dd>
+
+    </dl>
+</div>
+
+<script>
+        $(window).bind("load", function () {
+            document.getElementById("account").style.borderLeft = "7px solid #2A9FD6";
+        });
+</script>

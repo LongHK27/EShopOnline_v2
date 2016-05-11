@@ -1,0 +1,105 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EShopOnline</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="~/Contents/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Contents/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Contents/font-awesome/css/font-awesome.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="~/Contents/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Contents/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="icon" href="/Contents/icon/icon.ico" type="image/x-icon" />
+</head>
+
+<body>
+    <div class="head">
+        <div class="account">
+            <div class="head-star">
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <marquee behavior="" direction="">Bài thực hành Tạo Website với mô hình MVC</marquee>
+            <ul>
+                <li><a href="@Url.Action("Login", "Home")"><i class="fa fa-user"> Đăng nhập</i></a></li>
+                <li>
+                    <p>|</p>
+                </li>
+                <li><a href="#"><i class="fa fa-users"> Đăng ký</i></a></li>
+            </ul>
+        </div>
+        <div class="logo"><img src="~/Contents/Image/sale1.png" alt=""></div>
+        <span>EShopOnine</span>
+        <div id="Search">
+            <form action="#">
+                <img src="~/Contents/Image/icon_search.png" alt="search" id="imgSearch">
+                <input id="contentSearch" type="text" placeholder="Nhập từ khóa cần tìm kiếm...">
+                <input id="btnSubmit" type="submit" value="TÌM KIẾM">
+            </form>
+        </div>
+        <div class="contact">
+            <p><i class="fa fa-phone"></i> | Mua hàng: 0973002085</p>
+            <p><i class="fa fa-phone"></i> | CSKH: 0973002085</p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="navi-bar">
+            <ul>
+                <li><a href="@Url.Action("Index","Home")" id="home_l"> <i class="fa fa-home"> Trang chủ </i></a></li>
+                <li><a href="#" id="pc_l"> <i class="fa fa-laptop ">  Máy tính - PC </i></a></li>
+                <li><a href="@Url.Action("Index","Cpus")" id="cpu_l"> <i class="fa fa-qrcode">  CPU </i></a></li>
+                <li><a href="#" id="ram_l"> <i class="fa fa-plus">  RAM </i></a></li>
+                <li><a href="#" id="vga_l"> <i class="fa fa-steam">  Card VGA </i></a></li>
+                <li><a href="#" id="display_l"> <i class="fa fa-desktop">  Màn hình </i></a></li>
+                <li><a href="#" id="storage_l"> <i class="fa fa-hdd-o">  Thiết bị lưu trữ </i></a></li>
+
+            </ul>
+        </div>
+        @RenderBody()
+    </div>
+    <nav id="fixNav">
+        <i class="fa fa-shopping-cart cart"></i><span>SL: 5</span>
+        <i class="fa fa-credit-card"> 20,000,000</i>
+    </nav>
+    <div class="footer">
+        <p><span class="copyright"> « Copyright © LongHK - 2016. All Rights Reserved by Hoang Long » </span></p>
+        <div class="logo"><img src="/Contents/Image/sale1.png" alt=""></div>
+        <span class="name">EShopOnine</span>
+        <div class="contact-me">
+            <p class="design">Website Design By Hoang Khac Long</p>
+            <p><i class="fa fa-mortar-board"></i> University: Le Quy Don Technical University</p>
+            <p><i class="fa fa-life-saver"></i> Faculty: Information Technology - Class: TH12A</p>
+            <p><i class="fa fa-phone"> Phone: 0973 003 085</i></p>
+        </div>
+        <div class="contact-icon">
+            <a href="https://mail.google.com/mail/u/0/?tab=Xm"> <i class="fa fa-envelope" style="color:#ff3232;"></i> <span> Gmail</span></a><br />
+
+
+            <a href=""><i class="fa fa-google-plus-square" style="color: rgb(222,84,72);"> <span>Google+</span></i></a><br />
+
+            <a href="https://github.com/LongHK27"> <i class="fa fa-windows" style="color:black;"></i> <span> Hotmail</span></a><br />
+
+            <a href="https://www.facebook.com/Masamune.LHK"><i class="fa  fa-facebook-square" style="color:rgb(50,50,256);"> <span> Facebook</span> </i></a><br />
+
+            <a href="https://www.youtube.com/channel/UCKclh7VhHODure6HnHCE2rQ"> <i class="fa  fa-youtube" style="color:#ff3232;"></i> <span> Youtube</span></a><br />
+
+            <a href="https://github.com/LongHK27"> <i class="fa fa-github" style="color:black;"></i> <span> GitHub</span></a><br />
+
+        </div>
+
+    </div>
+</body>
+
+</html>

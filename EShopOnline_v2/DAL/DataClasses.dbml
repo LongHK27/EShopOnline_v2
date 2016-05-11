@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EShopOnlines" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ROOT;Initial Catalog=EShopOnlines;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="EShopOnlinesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CardVGA" Member="CardVGAs">
+    <Type Name="CardVGA">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="HangSX" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="GPU" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ChuanGiaoTiep" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="BoNhoVGA" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="BangThong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="XungNhip" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CongGiaoTiep" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="XuatXu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NamSX" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BaoHanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiamGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LinkImg1" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="LinkImg2" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="LinkImg3" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="CardVGA_HoaDon" Member="HoaDons" ThisKey="ID" OtherKey="IDCardVGA" Type="HoaDon" />
+      <Association Name="CardVGA_MayTinh" Member="MayTinhs" ThisKey="ID" OtherKey="CardVGA" Type="MayTinh" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RAM" Member="RAMs">
+    <Type Name="RAM">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="HangSX" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Loai" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DungLuong" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="TanNhiet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CongNghe" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="XuatXu" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="NamSX" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BaoHanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiamGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LinkImg1" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="LinkImg2" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="LinkImg3" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="RAM_HoaDon" Member="HoaDons" ThisKey="ID" OtherKey="IDRAM" Type="HoaDon" />
+      <Association Name="RAM_MayTinh" Member="MayTinhs" ThisKey="ID" OtherKey="RAM" Type="MayTinh" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CPU" Member="CPUs">
+    <Type Name="CPU">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="HangSX" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Loai" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Socket" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="TocDo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IGP" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SoNhan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BoNhoDem" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="CongNghe" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CongSuat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="XuatXu" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="NamSX" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BaoHanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiamGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LinkImg1" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="LinkImg2" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="LinkImg3" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="CPU_HoaDon" Member="HoaDons" ThisKey="ID" OtherKey="IDCPU" Type="HoaDon" />
+      <Association Name="CPU_MayTinh" Member="MayTinhs" ThisKey="ID" OtherKey="CPU" Type="MayTinh" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoaDon" Member="HoaDons">
+    <Type Name="HoaDon">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDTaiKhoan" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDMayTinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDRAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDCPU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDCardVGA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDOCung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDManHinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiamGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayLap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="CardVGA_HoaDon" Member="CardVGA" ThisKey="IDCardVGA" OtherKey="ID" Type="CardVGA" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="CPU_HoaDon" Member="CPU" ThisKey="IDCPU" OtherKey="ID" Type="CPU" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="RAM_HoaDon" Member="RAM" ThisKey="IDRAM" OtherKey="ID" Type="RAM" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="ManHinh_HoaDon" Member="ManHinh" ThisKey="IDManHinh" OtherKey="ID" Type="ManHinh" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="OCung_HoaDon" Member="OCung" ThisKey="IDOCung" OtherKey="ID" Type="OCung" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="TaiKhoan_HoaDon" Member="TaiKhoan" ThisKey="IDTaiKhoan" OtherKey="ID" Type="TaiKhoan" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ManHinh" Member="ManHinhs">
+    <Type Name="ManHinh">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="HangSX" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Loai" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="KichThuoc" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DoPhanGiai" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="XuatXu" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NamSX" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BaoHanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiamGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LinkImg1" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="LinkImg2" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="LinkImg3" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="ManHinh_HoaDon" Member="HoaDons" ThisKey="ID" OtherKey="IDManHinh" Type="HoaDon" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MayTinh" Member="MayTinhs">
+    <Type Name="MayTinh">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="HangSX" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Loai" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="CPU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OCung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CardVGA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HDH" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Chipset" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="OQuang" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="CongGiaoTiep" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="LAN" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NamSX" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BaoHanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiamGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LinkImg1" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="LinkImg2" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="LinkImg3" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="CardVGA_MayTinh" Member="CardVGA1" ThisKey="CardVGA" OtherKey="ID" Type="CardVGA" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="CPU_MayTinh" Member="CPU1" ThisKey="CPU" OtherKey="ID" Type="CPU" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="RAM_MayTinh" Member="RAM1" ThisKey="RAM" OtherKey="ID" Type="RAM" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="OCung_MayTinh" Member="OCung1" ThisKey="OCung" OtherKey="ID" Type="OCung" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OCung" Member="OCungs">
+    <Type Name="OCung">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="HangSX" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Loai" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="TocDoVongQuay" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BoNhoDem" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ChuanKetNoi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DungLuong" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KichThuoc" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="XuatXu" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="BaoHanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiamGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LinkImg1" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="LinkImg2" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="LinkImg3" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="OCung_HoaDon" Member="HoaDons" ThisKey="ID" OtherKey="IDOCung" Type="HoaDon" />
+      <Association Name="OCung_MayTinh" Member="MayTinhs" ThisKey="ID" OtherKey="OCung" Type="MayTinh" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="MatKhau" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="NgayLap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Loai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TaiKhoan_HoaDon" Member="HoaDons" ThisKey="ID" OtherKey="IDTaiKhoan" Type="HoaDon" />
+    </Type>
+  </Table>
+</Database>

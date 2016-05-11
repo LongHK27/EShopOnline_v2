@@ -1,0 +1,84 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EShopOnline</title>
+
+    <link rel="stylesheet" type="text/css" href="/Areas/Admin/Contents/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Areas/Admin/Contents/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Areas/Admin/Contents/css/local.css" />
+    <link rel="stylesheet" href="~/Areas/Admin/Contents/Css/TableFormStyle.css">
+
+    <script type="text/javascript" src="/Areas/Admin/Contents/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/Areas/Admin/Contents/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="icon" href="/Areas/Admin/Contents/icon/icon.ico" type="image/x-icon" />
+    <script>
+        $(window).bind("load", function () {
+            var id = new Array("home", "computer", "cpu", "rams", "display", "storage", "cardVGA", "account");
+            var item;
+            for (var i = 0; i < id.length; i++) {
+                item = document.getElementById(id[i]);
+                item.style.borderLeft = "0px";
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Admin Panel</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul id="active" class="nav navbar-nav side-nav">
+                    <li id="home">  <a href="@Url.Action("Index","Homes")"><i class="fa fa-th-large"></i> Trang chủ</a></li>
+                    <li id="computer"><a href="@Url.Action("Index","ComputerManager")"><i class="glyphicon glyphicon-th-large"></i> Máy tính</a></li>
+                    <li id="cpu">   <a href="@Url.Action("Index","CpuManager")"><i class="glyphicon glyphicon-th-large"></i> CPU</a></li>
+                    <li id="rams">  <a href="@Url.Action("Index","RamManager")"><i class="fa fa-th-large"></i> RAM</a></li>
+                    <li id="display"><a href="@Url.Action("Index","DisplayManager")"><i class="glyphicon glyphicon-th-large"></i> Màn hình</a></li>
+                    <li id="storage"><a href="@Url.Action("Index","StorageManager")"><i class="glyphicon glyphicon-th-large"></i> Ổ Cứng</a></li>
+                    <li id="cardVGA"><a href="@Url.Action("Index","CardVgaManager")"><i class="glyphicon glyphicon-th-large"></i> Crad VGA</a></li>
+                    <li id="account"><a href="@Url.Action("Index","AccountManager")"><i class="glyphicon glyphicon-th-large"></i> Tài Khoản</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right navbar-user">
+
+                    <li class="dropdown user-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i><span class="username">@ViewBag.UserName</span><b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            @{
+                                var profile = "/Admin/Account/Details/" + Session["id"];
+                            }
+                            <li><a href="@profile"><i class="fa fa-gear"></i> Profile</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("LogOut","Logins")"><i class="fa fa-power-off"></i> Log Out</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li>
+                        <form class="navbar-search">
+                            <input type="text" placeholder="Search" class="form-control">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- /#wrapper -->
+    <div id="wrapper-1">
+        @RenderBody()
+    </div>
+
+
+</body>
+</html>

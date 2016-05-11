@@ -1,0 +1,98 @@
+﻿@using EShopOnline_v2.DAL
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<h2 style="color: black;">Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+<table class="table-fill">
+
+    <thead>
+        <tr>
+            <th class="text-left">STT</th>
+            <th class="text-left">Image</th>
+            <th class="text-left">Tên SP</th>
+            <th class="text-left">Hãng SX</th>
+            <th class="text-left">Độ phân giải</th>
+            <th class="text-left">Kích thước</th>
+            <th class="text-left">Số lượng</th>
+            <th class="text-left">Giá</th>
+            <th class="text-left">Options</th>
+        </tr>
+    </thead>
+    @{
+        var i = 0;
+    }
+    <tbody class="table-hover">
+        @foreach (var item in ((IEnumerable<ManHinh>)ViewData["data"]).Where(item => item != null))
+        {
+            i++;
+            <tr>
+                <td class="text-left" onclick="Details(@item.ID)">@i</td>
+                <td> <img src="@item.LinkImg1" style="height: 8em; width: 8em;" onclick="Details(@item.ID)" /></td>
+                <td class="text-left" onclick="Details(@item.ID)">
+                    @{
+                        var item1 = item;
+                    }
+                    @Html.DisplayFor(modelItem => item1.Ten)
+                </td>
+                <td class="text-left" onclick="Details(@item.ID)">
+                    @{
+                        var item2 = item;
+                    }
+                    @Html.DisplayFor(modelItem => item2.HangSX)
+                </td>
+                <td class="text-left" onclick="Details(@item.ID)">
+                    @{
+                        var item3 = item;
+                    }
+                    @Html.DisplayFor(modelItem => item3.DoPhanGiai)
+                </td>
+                <td class="text-left" onclick="Details(@item.ID)">
+                    @{
+                        var item4 = item;
+                    }
+                    @Html.DisplayFor(modelItem => item4.KichThuoc)
+                </td>
+                <td class="text-left" onclick="Details(@item.ID)">
+                    @{
+                        var item5 = item;
+                    }
+                    @Html.DisplayFor(modelItem => item5.SoLuong)
+                </td>
+                <td class="text-left" onclick="Details(@item.ID)">@string.Format("{0:0,0 vnđ}", item.Gia)</td>
+
+                <td class="text-left">
+                    <a href="@Url.Action("Edit", "DisplayManager", new {id = item.ID})"><button class="bt btn-primary" style="width: 100%; z-index: 1000; margin-bottom: 10px;">Edit</button></a><br />
+                    <button onclick="DeleteConfirm('@item.ID', '@item.Ten')" class="bt btn-danger" style="width: 100%; z-index: 1000;">Delete</button><br />
+                </td>
+            </tr>
+                        }
+    </tbody>
+</table>
+
+<script>
+    $(window).bind("load", function() {
+        var item = document.getElementById("display");
+        item.style.borderLeft = "7px solid #2A9FD6";
+    });
+
+    function DeleteConfirm(id, name) {
+        if (confirm("Bạn có muốn xóa sản phẩm " + name + " không?")) {
+            var l = location.href;
+            l = l + "/" + "Delete/" + id;
+            location.replace(l);
+        }
+    }
+
+    function Details(id) {
+        var l = location.href;
+        l = l + "/" + "Details/" + id;
+        location.replace(l);
+    }
+</script>

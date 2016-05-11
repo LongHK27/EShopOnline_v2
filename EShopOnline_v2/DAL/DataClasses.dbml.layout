@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.125, 13.375" name="DataClasses">
+  <DataContextMoniker Name="/DataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ce0fbb41-7a1a-4c00-990d-3ac3854d1e93" absoluteBounds="11.875, 3.25, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/DataClassesDataContext/CardVGA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6ce2599-839c-4732-9a2c-b494c2104062" absoluteBounds="11.89, 3.7100000000000009, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="875aa7f1-5a86-4986-b473-8b53018f8806" absoluteBounds="6.125, 3.25, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/DataClassesDataContext/RAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b7a0fd02-27cc-4d7c-ba43-0e6f8ea7f253" absoluteBounds="6.1400000000000006, 3.71, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dc9a90b9-f415-4fe0-ad00-834164c93176" absoluteBounds="6.125, 7.5, 2, 4.6554182942708309">
+      <DataClassMoniker Name="/DataClassesDataContext/CPU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33e277b8-6ace-49ce-8209-21cd938c94ea" absoluteBounds="6.1400000000000006, 7.9600000000000009, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2de2562e-26df-4db8-87ec-81de6bef1517" absoluteBounds="3.125, 7.125, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/DataClassesDataContext/HoaDon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ece7790c-9e5b-4d4a-8186-da5763951549" absoluteBounds="3.1400000000000006, 7.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df91a148-e924-47fe-923a-7df6a481b7d9" absoluteBounds="11.875, 8.5, 2, 3.6939111328124987">
+      <DataClassMoniker Name="/DataClassesDataContext/ManHinh" />
+      <nestedChildShapes>
+        <elementListCompartment Id="310ea6b3-85d7-4b41-abc0-3bd1e41847a3" absoluteBounds="11.89, 8.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b54f240-e2c0-4074-8cc4-ca0749143a49" absoluteBounds="8.875, 3.25, 2, 4.8477197265624987">
+      <DataClassMoniker Name="/DataClassesDataContext/MayTinh" />
+      <nestedChildShapes>
+        <elementListCompartment Id="70ff1225-654e-4d50-b434-264f405afd59" absoluteBounds="8.89, 3.71, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="30218b55-b985-40ef-91eb-02ac34cbb6e1" absoluteBounds="8.75, 8.5, 2, 4.0785139973958309">
+      <DataClassMoniker Name="/DataClassesDataContext/OCung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ee356c3-9a7a-4b70-be08-439d8f7cf61b" absoluteBounds="8.765, 8.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="266f7a73-99fc-4538-9b2e-fd3eb6c0a8c4" absoluteBounds="0.75, 7.25, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/DataClassesDataContext/TaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="82eb5162-05a8-42c9-9af0-efbe57bc85a7" absoluteBounds="0.76500000000000057, 7.7100000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.784151825413 : 3.25); (12.784151825413 : 2.875); (3.55191441380391 : 2.875); (3.55191441380391 : 7.125)]" fixedFrom="Caller" fixedTo="Caller">
+      <AssociationMoniker Name="/DataClassesDataContext/CardVGA/CardVGA_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="ce0fbb41-7a1a-4c00-990d-3ac3854d1e93" />
+        <classShapeMoniker Id="2de2562e-26df-4db8-87ec-81de6bef1517" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.125 : 8.87100341796875); (5.125 : 8.87100341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/CPU/CPU_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="dc9a90b9-f415-4fe0-ad00-834164c93176" />
+        <classShapeMoniker Id="2de2562e-26df-4db8-87ec-81de6bef1517" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.125 : 5.1874995); (4.125 : 5.1874995); (4.125 : 7.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/RAM/RAM_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="875aa7f1-5a86-4986-b473-8b53018f8806" />
+        <classShapeMoniker Id="2de2562e-26df-4db8-87ec-81de6bef1517" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.9316776945157 : 12.1939111328125); (12.9316776945157 : 12.8285139973958); (3.77625454987718 : 12.8285139973958); (3.77625454987718 : 10.2420068359375)]" fixedFrom="Caller" fixedTo="Caller">
+      <AssociationMoniker Name="/DataClassesDataContext/ManHinh/ManHinh_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="df91a148-e924-47fe-923a-7df6a481b7d9" />
+        <classShapeMoniker Id="2de2562e-26df-4db8-87ec-81de6bef1517" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.875 : 5.48155843098958); (10.875 : 5.48155843098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/CardVGA/CardVGA_MayTinh" />
+      <nodes>
+        <classShapeMoniker Id="ce0fbb41-7a1a-4c00-990d-3ac3854d1e93" />
+        <classShapeMoniker Id="0b54f240-e2c0-4074-8cc4-ca0749143a49" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.125 : 7.79885986328125); (8.875 : 7.79885986328125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/CPU/CPU_MayTinh" />
+      <nodes>
+        <classShapeMoniker Id="dc9a90b9-f415-4fe0-ad00-834164c93176" />
+        <classShapeMoniker Id="0b54f240-e2c0-4074-8cc4-ca0749143a49" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.125 : 5.19310628255208); (8.875 : 5.19310628255208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/RAM/RAM_MayTinh" />
+      <nodes>
+        <classShapeMoniker Id="875aa7f1-5a86-4986-b473-8b53018f8806" />
+        <classShapeMoniker Id="0b54f240-e2c0-4074-8cc4-ca0749143a49" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 12.3982161458333); (4.48187977493859 : 12.3982161458333); (4.48187977493859 : 10.2420068359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/OCung/OCung_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="30218b55-b985-40ef-91eb-02ac34cbb6e1" />
+        <classShapeMoniker Id="2de2562e-26df-4db8-87ec-81de6bef1517" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.79119987323668 : 8.5); (9.79119987323668 : 8.0977197265625)]" fixedFrom="Caller" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/OCung/OCung_MayTinh" />
+      <nodes>
+        <classShapeMoniker Id="30218b55-b985-40ef-91eb-02ac34cbb6e1" />
+        <classShapeMoniker Id="0b54f240-e2c0-4074-8cc4-ca0749143a49" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.52005126953125); (3.125 : 8.52005126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesDataContext/TaiKhoan/TaiKhoan_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="266f7a73-99fc-4538-9b2e-fd3eb6c0a8c4" />
+        <classShapeMoniker Id="2de2562e-26df-4db8-87ec-81de6bef1517" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,81 @@
+﻿@model EShopOnline_v2.DAL.ManHinh
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+    <link rel="stylesheet" type="text/css" href="/Areas/Admin/Contents/css/Detail.css" />
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Màn hình</h4>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    <hr />
+    <div class="img-item-list">
+        <div class="img-item">
+            <img src="@Model.LinkImg1" alt="@Model.Ten">
+        </div>
+        <div class="img-item">
+            <img src="@Model.LinkImg2" alt="@Model.Ten">
+        </div>
+
+    </div>
+    <dl class="dl-horizontal">
+        <dt>Tên sản phẩm:</dt>
+        <dd> @Html.DisplayFor(model => model.Ten) </dd>
+
+        <dt>Hãng sản xuất:</dt>
+        <dd> @Html.DisplayFor(model => model.HangSX) </dd>
+
+        <dt>Loại:</dt>
+        <dd> @Html.DisplayFor(model => model.Loai)</dd>
+
+        <dt>Kích thước:</dt>
+        <dd> @Html.DisplayFor(model => model.KichThuoc)</dd>
+
+        <dt>Độ phân giải: </dt>
+        <dd> @Html.DisplayFor(model => model.DoPhanGiai) </dd>
+
+        <dt>Xuất xứ: </dt>
+        <dd> @Html.DisplayFor(model => model.XuatXu)</dd>
+
+        <dt>Năm SX: </dt>
+        <dd> @Html.DisplayFor(model => model.NamSX)</dd>
+
+        <dt>Thời gian bảo hành: </dt>
+        <dd>@Html.DisplayFor(model => model.BaoHanh) tháng</dd>
+
+        <dt>Số lượng:</dt>
+        <dd> @Html.DisplayFor(model => model.SoLuong)</dd>
+
+        <dt>Giá:</dt>
+        <dd> @String.Format("{0:0,0 vnđ}", @Model.Gia)</dd>
+
+        <dt>Giảm giá:</dt>
+        <dd>@String.Format("{0:0,0 vnđ}", @Model.GiamGia)</dd>
+        <dt>Nguồn ảnh:</dt>
+        <dd>
+            <p>@Model.LinkImg1</p>
+            <p>@Model.LinkImg2</p>
+            <p>@Model.LinkImg3</p>
+        </dd>
+        <dt></dt>
+        <dd>
+
+            <p class="feedback">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </dd>
+
+    </dl>
+</div>
+
+<script>
+        $(window).bind("load", function () {
+            document.getElementById("display").style.borderLeft = "7px solid #2A9FD6";
+        });
+</script>

@@ -1,0 +1,132 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+/*** Table Styles **/
+
+.table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  border: 1px solid rgba(0,100,250,0.5);
+  height: auto;
+  margin: auto;
+  min-width: 900px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+ 
+.table-fill th {
+  color:#f1f1f1;;
+  background:#1b1e24;
+/*  border-bottom:4px solid #9ea7af;*/
+  border-right: 2px solid #343a45;
+  font-size:0.9em;
+  font-weight: 200;
+  padding:0.5em;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+.table-fill th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+.table-fill th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+.table-fill tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom: 1px solid #C1C3D1;
+  color:black;
+  font-size:1.1em;
+  font-weight:normal;
+    text-shadow: none;
+/*  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);*/
+}
+ 
+.table-fill tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+  border-bottom: 1px solid #22262e;
+}
+
+ 
+.table-fill tr:hover td a{
+  color:white;
+   text-shadow: 0 1px 2px rgba(0, 0, 255, 1);
+    text-decoration: none;
+}
+ 
+.table-fill tr:first-child {
+  border-top:none;
+}
+
+.table-fill tr:last-child {
+  border-bottom:none;
+}
+ 
+/*.table-fill tr:nth-child(odd) td {
+  background:#EBEBEB;
+}*/
+ 
+.table-fill tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+.table-fill tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+.table-fill tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+.table-fill td {
+  background:#FFFFFF;
+  padding:0.7em;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:400;
+  font-size:0.8em;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+.table-fill td:last-child {
+  border-right: 0px;
+}
+
+.table-fill th.text-left {
+  text-align: left;
+}
+
+.table-fill th.text-center {
+  text-align: center;
+}
+
+.table-fill th.text-right {
+  text-align: right;
+}
+
+.table-fill td.text-left {
+  text-align: left;
+}
+
+.table-fill td.text-center {
+  text-align: center;
+}
+
+.table-fill td.text-right {
+  text-align: right;
+}
+.text-left a {
+    color: #2a9fd6;
+}
+.text-left a:hover {
+    color: white;
+}
