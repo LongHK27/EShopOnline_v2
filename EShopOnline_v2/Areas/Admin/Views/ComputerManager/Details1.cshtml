@@ -1,0 +1,104 @@
+﻿@model EShopOnline_v2.Models.ComputerModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+    <link rel="stylesheet" type="text/css" href="/Areas/Admin/Contents/css/Detail.css" />
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Computer</h4>
+    <hr />
+    <div class="img-item-list">
+        <div class="img-item">
+            <img src="@Model.LinkImg1" alt="@Model.Ten">
+        </div>
+        <div class="img-item">
+            <img src="@Model.LinkImg2" alt="@Model.Ten">
+        </div>
+
+    </div>
+    <dl class="dl-horizontal">
+        <dt>Tên sản phẩm:</dt>
+        <dd> @Html.DisplayFor(model => model.Ten) </dd>
+
+        <dt>Hãng sản xuất:</dt>
+        <dd> @Html.DisplayFor(model => model.HangSx) </dd>
+
+        <dt>Model:</dt>
+        <dd> @Html.DisplayFor(model => model.Loai)</dd>
+
+        <dt>CPU:</dt>
+        <dd> @Html.DisplayFor(model => model.Cpu.Ten)</dd>
+
+        <dt>RAM: </dt>
+        <dd> @Html.DisplayFor(model => model.Ram.Ten)</dd>
+
+        <dt>Card VGA: </dt>
+        @{
+            var cardVga = @Model.CardVga.ID == 0 ? @Model.Cpu.IGP : @Model.CardVga.GPU;
+        }
+        <dd> 
+            @cardVga
+        </dd>
+
+        <dt>Ổ cứng: </dt>
+        <dd> @Html.DisplayFor(model => model.Ocung.Ten)</dd>
+
+        <dt>Hệ điều hành theo máy: </dt>
+        <dd> @Html.DisplayFor(model => model.Hdh)</dd>
+
+        <dt>Chipset: </dt>
+        <dd> @Html.DisplayFor(model => model.Chipset)</dd>
+
+        <dt>Ổ quang: </dt>
+        <dd> @Html.DisplayFor(model => model.Oquang)</dd>
+
+        <dt>Cổng giao tiếp: </dt>
+        <dd> @Html.DisplayFor(model => model.CongGiaoTiep)</dd>
+
+        <dt>LAN: </dt>
+        <dd> @Html.DisplayFor(model => model.Lan)</dd>
+
+        <dt>Số lượng: </dt>
+        <dd> @Html.DisplayFor(model => model.SoLuong)</dd>
+
+        <dt>Năm SX: </dt>
+        <dd> @Html.DisplayFor(model => model.NamSx)</dd>
+
+        <dt>Thời gian bảo hành: </dt>
+        <dd>@Html.DisplayFor(model => model.BaoHanh) tháng</dd>
+
+        <dt>Số lượng:</dt>
+        <dd> @Html.DisplayFor(model => model.SoLuong)</dd>
+
+        <dt>Giá:</dt>
+        <dd> @String.Format("{0:0,0 vnđ}", @Model.Gia)</dd>
+
+        <dt>Giảm giá:</dt>
+        <dd> @String.Format("{0:0,0 vnđ}", @Model.GiamGia)</dd>
+        <dt>Nguồn ảnh:</dt>
+        <dd>
+            <p>@Model.LinkImg1</p>
+            <p>@Model.LinkImg2</p>
+            <p>@Model.LinkImg3</p>
+        </dd>
+        <dt></dt>
+        <dd>
+
+            <p class="feedback">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </dd>
+
+    </dl>
+</div>
+
+<script>
+        $(window).bind("load", function () {
+            document.getElementById("computer").style.borderLeft = "7px solid #2A9FD6";
+        });
+</script>

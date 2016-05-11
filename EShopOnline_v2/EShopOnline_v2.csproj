@@ -175,6 +175,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\CardVgaManagerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ComputerManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\CpuManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\DisplayManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Areas\Admin\Controllers\StorageManagerController.cs" />
     <Compile Include="Areas\Admin\DAL\AccountDataAccessLayer.cs" />
     <Compile Include="Areas\Admin\DAL\CardVgaDataAccessLayer.cs" />
+    <Compile Include="Areas\Admin\DAL\ComputerDataAccessLayer.cs" />
     <Compile Include="Areas\Admin\DAL\CpuDataAccessLayer.cs" />
     <Compile Include="Areas\Admin\DAL\DisplayDataAccessLayer.cs" />
     <Compile Include="Areas\Admin\DAL\RamDataAccessLayer.cs" />
@@ -198,6 +200,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ComputerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -318,6 +321,13 @@
     <Content Include="Areas\Admin\Views\AccountManager\Details.cshtml" />
     <Content Include="Areas\Admin\Views\AccountManager\Create.cshtml" />
     <Content Include="Areas\Admin\Views\AccountManager\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ComputerManager\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ComputerManager\Create1.cshtml" />
+    <Content Include="Areas\Admin\Views\ComputerManager\Details1.cshtml" />
+    <Content Include="Areas\Admin\Views\ComputerManager\Edit1.cshtml" />
+    <Content Include="Areas\Admin\Views\ComputerManager\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ComputerManager\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ComputerManager\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -328,12 +338,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Images\Computer\" />
     <Folder Include="Images\Display\" />
     <Folder Include="Images\PC\" />
     <Folder Include="Images\RAM\" />
     <Folder Include="Images\Storage\" />
     <Folder Include="Images\VGA\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

@@ -1,0 +1,121 @@
+﻿@using EShopOnline_v2.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<h2 style="color: black;">Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+<table class="table-fill">
+
+    <thead>
+        <tr>
+            <th class="text-left">STT</th>
+            <th class="text-left">Image</th>
+            <th class="text-left">Tên SP</th>
+            <th class="text-left">Hãng SX</th>
+            <th class="text-left">CPU</th>
+            <th class="text-left">RAM</th>
+            <th class="text-left">Ổ cứng</th>
+            <th class="text-left">Card VGA</th>
+            <th class="text-left">Số lượng</th>
+            <th class="text-left">Giá</th>
+            <th class="text-left">Options</th>
+        </tr>
+    </thead>
+    @{
+        var i = 0;
+    }
+    <tbody class="table-hover">
+        @foreach (var item in (List<ComputerModel>) ViewBag.computer)
+        {
+            i++;
+            <tr>
+                <td class="text-left" onclick="Details(@item.Id)">@i</td>
+                <td> <img src="@item.LinkImg1" style="height: 8em; width: 8em;" onclick="Details(@item.Id)" /></td>
+                <td class="text-left" onclick="Details(@item.Id)">
+                    @{
+                        var item1 = item;
+                    }
+                    @Html.DisplayFor(modelItem => item1.Ten)
+                </td>
+                <td class="text-left" onclick="Details(@item.Id)">
+                    @{
+                        var item2 = item;
+                    }
+                    @Html.DisplayFor(modelItem => item2.HangSx)
+                </td>
+                <td class="text-left" onclick="Details(@item.Id)">
+                    @{
+                        var item3 = item;
+                    }
+                    @Html.DisplayFor(modelItem => item3.Cpu.Ten)
+                </td>
+                <td class="text-left" onclick="Details(@item.Id)">
+                    @{
+                        var item4 = item;
+                    }
+                    @Html.DisplayFor(modelItem => item4.Ram.DungLuong) / 
+                    @Html.DisplayFor(modelItem => item4.Ram.HangSX) / 
+                    @Html.DisplayFor(modelItem => item4.Ram.Loai)
+                </td>
+                <td class="text-left" onclick="Details(@item.Id)">
+                    @{
+                        var item5 = item;
+                    }
+                    @Html.DisplayFor(modelItem => item5.Ocung.DungLuong) /
+                    @Html.DisplayFor(modelItem => item5.Ocung.TocDoVongQuay) /
+                    @Html.DisplayFor(modelItem => item5.Ocung.ChuanKetNoi)
+                </td>
+
+                <td class="text-left" onclick=" Details(@item.Id) ">
+                    @{
+                        var item6 = item;
+                        var cardVga = item6.CardVga.ID == 0 ? item6.Cpu.IGP : item6.CardVga.GPU;
+                    }
+
+                    @cardVga
+                </td>
+
+                <td class="text-left" onclick="Details(@item.Id)">
+                    @{
+                        var item7 = item;
+                    }
+                    @Html.DisplayFor(modelItem => item7.SoLuong)
+                </td>
+
+                <td class="text-left" onclick="Details(@item.Id)">@string.Format("{0:0,0 vnđ}", item.Gia)</td>
+
+                <td class="text-left">
+                    <a href="@Url.Action("Edit", "ComputerManager", new {id = item.Id})"><button class="bt btn-primary" style="width: 100%; z-index: 1000; margin-bottom: 10px;">Edit</button></a><br />
+                    <button onclick="DeleteConfirm('@item.Id', '@item.Ten')" class="bt btn-danger" style="width: 100%; z-index: 1000;">Delete</button><br />
+                </td>
+            </tr>
+                        }
+    </tbody>
+</table>
+
+<script>
+    $(window).bind("load", function() {
+        var item = document.getElementById("computer");
+        item.style.borderLeft = "7px solid #2A9FD6";
+    });
+
+    function DeleteConfirm(id, name) {
+        if (confirm("Bạn có muốn xóa sản phẩm " + name + " không?")) {
+            var l = location.href;
+            l = l + "/" + "Delete/" + id;
+            location.replace(l);
+        }
+    }
+
+    function Details(id) {
+        var l = location.href;
+        l = l + "/" + "Details/" + id;
+        location.replace(l);
+    }
+</script>

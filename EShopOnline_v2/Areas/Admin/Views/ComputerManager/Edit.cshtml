@@ -1,0 +1,254 @@
+﻿@using EShopOnline_v2.DAL
+@model EShopOnline_v2.Models.ComputerModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+    <link rel="stylesheet" type="text/css" href="~/Areas/Admin/Contents/css/Create.css" />
+}
+
+
+@using (Html.BeginForm("Edit", "Computer", FormMethod.Post, new { @enctype = "multipart/form-data", @class = "form1", @id = "form1" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+    <div class="form-horizontal">
+        <h4>Computer</h4>
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <span class="control-label col-md-2">Tên sản phẩm</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ten, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Ten, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Hãng Sản Xuất</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HangSx, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HangSx, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Model</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Loai, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Loai, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">CPU</span>
+            <div class="col-md-10">
+
+                <select class="select" id="cpu" name="Cpu">
+                    @{
+                        foreach (var item in (List<CpuListItem>)ViewBag.cpu)
+                        {
+                            if (item.Id.ToString() == Model.Cpu)
+                            {
+                                <option value="@item.Id.ToString()" selected>@item.Name</option>
+                            }
+                            else
+                            {
+                                <option value="@item.Id.ToString()">@item.Name</option>
+                            }
+                        }
+                    }
+                </select>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">RAM</span>
+            <div class="col-md-10">
+                <select class="select" id="Ram" name="Ram">
+                    @{
+                        foreach (var item in (List<RamListItem>)ViewBag.ram)
+                        {
+                            if (item.Id.ToString() == Model.Ram)
+                            {
+                                <option value="@item.Id.ToString()" selected>@item.Name</option>
+                            }
+                            else
+                            {
+                                <option value="@item.Id.ToString()">@item.Name</option>
+                            }
+                            <option value="@item.Id.ToString()">@item.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Card VGA</span>
+            <div class="col-md-10">
+                <select class="select" id="cardVGA" name="CardVga">
+                    @{
+                        foreach (var item in (List<VgaListItem>)ViewBag.vga)
+                        {
+                            if (item.Id.ToString() == Model.CardVga)
+                            {
+                                <option value="@item.Id.ToString()" selected>@item.Name</option>
+                            }
+                            else
+                            {
+                                <option value="@item.Id.ToString()">@item.Name</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Ổ cứng</span>
+            <div class="col-md-10">
+                <select class="select" id="Ocung" name="Ocung">
+                    @{
+                        foreach (var item in (List<StorageListItem>)ViewBag.storage)
+                        {
+                            if (item.Id.ToString() == Model.Ocung)
+                            {
+
+                            }
+                            <option value="@item.Id.ToString()" selected>@item.Name</option>
+                        }
+                    }
+                </select>
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Ổ quang</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Oquang, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Oquang, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Cổng giao tiếp</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CongGiaoTiep, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CongGiaoTiep, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Hệ điều hành theo máy</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Hdh, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Hdh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Chipset</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Chipset, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Chipset, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">LAN</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Lan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Lan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Trọng lượng</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TrongLuong, new { htmlAttributes = new { @class = "num form-control", @id = "num" } })
+                @Html.ValidationMessageFor(model => model.TrongLuong, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Số lượng</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SoLuong, new { htmlAttributes = new { @class = "num form-control", @id = "num" } })
+                @Html.ValidationMessageFor(model => model.SoLuong, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Năm sản xuất</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NamSx, new { htmlAttributes = new { @class = "form-control", @list = "year", @id = "years" } })
+                @Html.ValidationMessageFor(model => model.NamSx, "", new { @class = "text-danger" })
+                <datalist id="year">
+                    @for (var i = DateTime.Now.Year; i >= 2005; i--)
+                    {
+                        <option value="@i"></option>
+                    }
+                </datalist>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Thời gian bảo hành</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BaoHanh, new { htmlAttributes = new { @class = "form-control", @id = "num" } })
+                @Html.ValidationMessageFor(model => model.BaoHanh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Giá sản phẩm</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Gia, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Gia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Giảm giá</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GiamGia, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GiamGia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">Thư viện ảnh</span>
+            <div class="col-md-10">
+                <input id="file1" name="file1" type="file" />
+                @Html.ValidationMessageFor(model => model.LinkImg, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+                        }
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script>
+    $(window).bind("load", function() {
+        var item = document.getElementById("computer");
+        item.style.borderLeft = "7px solid #2A9FD6";
+    });
+</script>
+
+@* ------------------------------------------------------------------------------------- *@
